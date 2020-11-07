@@ -1,0 +1,13 @@
+frontend http-in
+    bind *:80
+    timeout client 5000ms
+    mode http
+    default_backend web_servers
+
+backend web_servers
+    timeout connect 5000ms
+    timeout server 5000ms
+    mode http
+{% for webserver in groups['webservers'] %}
+    server {{ hostvars[webserver]['inventory_hostname'] }} {{hostvars[webserver]['ansible_default_ipv4']['address']}}:80
+{% endfor %}
