@@ -14,4 +14,9 @@
       template:
         src:  default
         dest: /etc/nginx/sites-available/default
-        
+
+    - name: Restart the nginx servers
+      service:
+        name: nginx
+        state:  restarted 
+
