@@ -28,3 +28,8 @@
           - php-fpm
         state:  latest
 
+    - name: Move index.php file to servers (/var/www/html)
+      copy:
+        src: webpages/index.php
+        dest: /var/www/html/
+
