@@ -20,3 +20,11 @@
         name: nginx
         state:  restarted 
 
+    - name: Install PHP packages
+      apt:
+        update_cache: yes
+        name:
+          - php
+          - php-fpm
+        state:  latest
+
