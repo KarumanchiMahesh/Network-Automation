@@ -1,0 +1,12 @@
+---
+
+- hosts:  webservers
+  become: yes
+
+  tasks:
+    - name: Installation of latest version of nginx server
+      apt:
+        update_cache: yes
+        name: nginx
+        state:  latest
+        
