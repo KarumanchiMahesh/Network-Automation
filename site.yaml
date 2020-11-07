@@ -33,3 +33,15 @@
         src: webpages/index.php
         dest: /var/www/html/
 
+- hosts:  haproxy
+  become: yes
+
+  tasks:
+
+    - name: Installation of haproxy server
+      apt:
+        update_cache: yes
+        name: haproxy
+        state:  latest
+        
+
