@@ -9,4 +9,9 @@
         update_cache: yes
         name: nginx
         state:  latest
+
+    - name: Default configuration of nginx server
+      template:
+        src:  default
+        dest: /etc/nginx/sites-available/default
         
